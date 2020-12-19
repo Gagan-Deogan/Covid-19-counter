@@ -42,13 +42,11 @@ const UIcomp = (function(){
             }
         },
         disabledDark: function(){
-            console.log("disable")
             document.body.classList.remove('darkmode');
             document.getElementById("myImg").src = "./sun.png";
             localStorage.setItem('mode',"disabled");
         },
         enabledDark: function(){
-            console.log("enable");
             document.body.classList.add('darkmode');
             document.getElementById("myImg").src = "./moon.png";
             localStorage.setItem('mode',"enabled");
@@ -56,11 +54,10 @@ const UIcomp = (function(){
         setTheme : function(){
             let darkMode = localStorage.getItem("mode");
 
-            if(darkMode==='disabled'|| darkMode ===null){
+            if(darkMode==='disabled' || darkMode ===null ){
                 this.enabledDark();
             }else{
                 this.disabledDark();
-
             }
         },
         setMode: function(){
